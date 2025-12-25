@@ -22,9 +22,12 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
 .logo {
   width: 140px;
 }
+
+/* Nav links */
 nav ul li {
   display: inline-block;
   list-style: none;
@@ -36,6 +39,7 @@ nav ul li a {
   color: #333;
   font-weight: 400;
 }
+
 .login-btn {
   text-decoration: none;
   color: #333;
@@ -54,6 +58,11 @@ nav ul li a {
   border-top-right-radius: 0;
   transition: 0.5s;
 }
+
+.btn:hover {
+  border-top-right-radius: 30px;
+}
+
 .content {
   margin-top: 10%;
   max-width: 600px;
@@ -69,23 +78,25 @@ nav ul li a {
   color: #333;
   animation-delay: 0.5s;
 }
+
 .content .btn {
   padding: 15px 80px;
   font-size: 16px;
   animation-delay: 1s;
 }
-.btn:hover {
-  border-top-right-radius: 30px;
-}
+
 .feature-img {
   width: 530px;
   position: absolute;
   bottom: 0;
   right: 10%;
 }
+
 .feature-img.anim {
   animation-delay: 1.5s;
 }
+
+/* Animation */
 .anim {
   opacity: 0;
   transform: translateY(30px);
@@ -95,6 +106,113 @@ nav ul li a {
 @keyframes moveup {
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
+  }
+}
+
+/* ===== Hamburger Menu ===== */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 992px) {
+  .hero {
+    padding: 20px 5%;
+  }
+
+  .content h1 {
+    font-size: 55px;
+  }
+
+  .feature-img {
+    width: 420px;
+    right: 5%;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  nav ul {
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 15px 0;
+  }
+
+  #menu-toggle:checked ~ ul {
+    display: block;
+  }
+
+  nav div {
+    width: 100%;
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  #menu-toggle:checked ~ div {
+    display: block;
+  }
+
+  .content {
+    text-align: center;
+    margin-top: 15%;
+  }
+
+  .content h1 {
+    font-size: 45px;
+  }
+
+  .content .btn {
+    padding: 14px 50px;
+  }
+
+  .feature-img {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 40px auto 0;
+    right: 0;
+    display: block;
+  }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 36px;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  .btn {
+    padding: 12px 30px;
   }
 }

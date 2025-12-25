@@ -21,13 +21,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 100;
 }
 
 .logo {
   width: 140px;
 }
 
-/* Nav links */
 nav ul li {
   display: inline-block;
   list-style: none;
@@ -44,7 +45,6 @@ nav ul li a {
   text-decoration: none;
   color: #333;
   margin-right: 15px;
-  font-weight: 400;
 }
 
 .btn {
@@ -76,13 +76,11 @@ nav ul li a {
 .content p {
   margin: 10px 0 30px;
   color: #333;
-  animation-delay: 0.5s;
 }
 
 .content .btn {
   padding: 15px 80px;
   font-size: 16px;
-  animation-delay: 1s;
 }
 
 .feature-img {
@@ -90,10 +88,6 @@ nav ul li a {
   position: absolute;
   bottom: 0;
   right: 10%;
-}
-
-.feature-img.anim {
-  animation-delay: 1.5s;
 }
 
 /* Animation */
@@ -110,86 +104,70 @@ nav ul li a {
   }
 }
 
-/* ===== Hamburger Menu ===== */
+/* ===== Hamburger ===== */
 #menu-toggle {
   display: none;
 }
 
 .menu-icon {
   display: none;
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
 }
 
-/* ===== Tablet ===== */
-@media (max-width: 992px) {
-  .hero {
-    padding: 20px 5%;
-  }
-
-  .content h1 {
-    font-size: 55px;
-  }
-
-  .feature-img {
-    width: 420px;
-    right: 5%;
-  }
-}
-
-/* ===== Mobile ===== */
+/* ===== Mobile Responsive (FIXED ISSUE) ===== */
 @media (max-width: 768px) {
-  nav {
-    position: relative;
-    flex-wrap: wrap;
-  }
-
   .menu-icon {
     display: block;
   }
 
   nav ul {
-    width: 100%;
-    background: #fff;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     display: none;
-    text-align: center;
-    padding: 10px 0;
+    flex-direction: column;
+    text-align: left;
+    padding: 15px 0;
   }
 
   nav ul li {
     display: block;
-    margin: 15px 0;
+    margin: 12px 20px;
   }
 
   #menu-toggle:checked ~ ul {
     display: block;
   }
 
-  nav div {
-    width: 100%;
+  .nav-actions {
+    position: absolute;
+    top: 240px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    padding: 15px;
     display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
     text-align: center;
-    margin-top: 10px;
   }
 
-  #menu-toggle:checked ~ div {
+  #menu-toggle:checked ~ .nav-actions {
     display: block;
   }
 
   .content {
     text-align: center;
-    margin-top: 15%;
+    margin-top: 18%;
   }
 
   .content h1 {
     font-size: 45px;
-  }
-
-  .content .btn {
-    padding: 14px 50px;
   }
 
   .feature-img {
@@ -202,17 +180,9 @@ nav ul li a {
   }
 }
 
-/* ===== Small Mobile ===== */
+/* Small Mobile */
 @media (max-width: 480px) {
   .content h1 {
     font-size: 36px;
-  }
-
-  nav ul li {
-    margin: 8px 0;
-  }
-
-  .btn {
-    padding: 12px 30px;
   }
 }
